@@ -135,12 +135,14 @@ class Motors(object):
 
 
    def calculate_duty(self,v):
+      """accepts velocity as input and calculates the frequency"""
       w = v/RADIUS;
       f = w/(2*3.14)
       return f
 
 
    def go_forward(self,v,t):
+      """goes forwarda at the speed indicated and in the time defined"""
       duty = self.calculate_duty(v)
       engines_inensity(duty)
       self.forward_config()
@@ -150,6 +152,7 @@ class Motors(object):
 
 
    def go_backward(self,v,t):
+      """goes backward at the speed indicated and in the time defined"""
       duty = self.calculate_duty(v)
       engines_inensity(duty)
       self.backward_config()
@@ -159,6 +162,7 @@ class Motors(object):
 
 
    def turn_right(self,v,t):
+      """turns at the speed indicated and in the time defined"""
       duty = self.calculate_duty(v)
       engines_inensity(duty)
       self.right_config()
@@ -168,6 +172,7 @@ class Motors(object):
 
 
    def turn_right(self,v,t):
+      """turn at the speed indicated and in the time defined"""
       duty = self.calculate_duty(v)
       engines_inensity(duty)
       self.left_config()
@@ -177,6 +182,7 @@ class Motors(object):
 
 
    def stop_pwm(self):
+      """stops the pwm pins"""
       self.pi_pwm1.stop()
       self.pi_pwm2.stop()
       self.pi_pwm3.stop()
@@ -184,6 +190,7 @@ class Motors(object):
    
 
    def kill_IO(self):
+      """deletes all the pins IO from memory"""
       GPIO.cleanup()
 
 

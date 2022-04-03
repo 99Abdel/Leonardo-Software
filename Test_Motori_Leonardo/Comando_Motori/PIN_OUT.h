@@ -1,0 +1,17 @@
+#define TX 0 
+#define RX 1 
+
+#define SONAR1 8   // RIGHT SONAR
+#define SONAR2 9   // CENTRAL SONAR
+#define SONAR3 10  // LEFT SONAR
+
+#define PWM_F_R 3  // PWM FRONT RIGHT MOTOR
+#define PWM_F_L 4  // PWM FRONT LEFT MOTOR
+#define PWM_B_R 6  // PWM BACK RIGHT MOTOR
+#define PWM_B_L 7  // PWM BACK LEFT MOTOR
+
+#define PWM_F 12  // PWM FRONT UPLIFT MOTOR
+#define PWM_C 13  // PWM CENTRE UPLIFT MOTOR
+#define PWM_B 14  // PWM BACK UPLIFT MOTOR
+
+#define PWM_CG 15 // PWM BARICENTRIC MOTOR
