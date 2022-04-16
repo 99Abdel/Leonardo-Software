@@ -1,5 +1,11 @@
 #include "PIN_OUT.h"
-#include "Set_Orientation.h"
+#include "Manual_Mode.h"
+
+#define DELAY 100
+#define MIN 0 // min value of speed
+#define MAX 1 // max value of speed
+
+int pwm_value;
 
 void setup() {
 
@@ -15,7 +21,10 @@ void setup() {
   // H BRIDGE PIN 
    pinMode(STANDBY_R,OUTPUT);
    pinMode(STANDBY_L,OUTPUT);
+   
   // ALL THE PINS TO MOVE THE ENGINS ARE IN OUTPUT MODE
+
+  // SET OF PINS FOR PWM TO SET SPEED FROM
    pinMode(PWM_F_R,OUTPUT);
    pinMode(PWM_F_L,OUTPUT);
    pinMode(PWM_B_R,OUTPUT);
@@ -35,13 +44,11 @@ void setup() {
    /*
    * ALL OF THIS PINS ARE ANALOG
    */
-
 }
 
 
 void loop() {
-
-  turn_off_bridges();
   
+  go_forward_man(0.5);
 
 }
